@@ -1,0 +1,72 @@
+{
+  "name": "soy-ui-react",
+  "type": "module",
+  "packageManager": "pnpm@10.4.1",
+  "license": "MIT",
+  "keywords": [
+    "React admin",
+    "react-admin-template",
+    "Vite5",
+    "TypeScript",
+    "Ant Design",
+    "antd-admin",
+    "Redux",
+    "React-Router V6",
+    "UnoCSS"
+  ],
+  "engines": {
+    "node": ">=18.12.0",
+    "pnpm": ">=8.7.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "cleanup": "sa cleanup",
+    "commit": "sa git-commit",
+    "commit:zh": "sa git-commit -l=zh-cn",
+    "lint": "eslint . --fix",
+    "prepare": "simple-git-hooks",
+    "preview": "vite preview",
+    "release": "sa release",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "update-pkg": "sa update-pkg"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-redux": "9.2.0",
+    "react-router-dom": "7.2.0"
+  },
+  "devDependencies": {
+    "@soybeanjs/eslint-config": "1.5.3",
+    "@types/node": "22.13.5",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@typescript-eslint/eslint-plugin": "8.24.1",
+    "@typescript-eslint/parser": "8.24.1",
+    "@unocss/eslint-config": "66.0.0",
+    "@unocss/preset-icons": "66.0.0",
+    "@unocss/preset-uno": "66.0.0",
+    "@unocss/transformer-directives": "66.0.0",
+    "@unocss/transformer-variant-group": "66.0.0",
+    "@unocss/vite": "66.0.0",
+    "boxen": "8.0.1",
+    "consola": "3.4.0",
+    "eslint": "9.21.0",
+    "eslint-plugin-react": "7.37.4",
+    "eslint-plugin-react-hooks": "5.1.0",
+    "eslint-plugin-react-refresh": "0.4.19",
+    "eslint-plugin-sort": "4.0.0",
+    "lint-staged": "15.4.3",
+    "simple-git-hooks": "2.11.1",
+    "tsx": "4.19.3",
+    "typescript": "5.7.3",
+    "vite": "6.1.1"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "pnpm sa git-commit-verify",
+    "pre-commit": "pnpm typecheck && pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
