@@ -1,0 +1,29 @@
+{
+  "name": "@xpress/turbo-run",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "turbo-run": "./bin/turbo-run.mjs"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "files": ["dist"],
+  "scripts": {
+    "stub": "pnpm unbuild --stub"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "@manypkg/get-packages": "^3.0.0",
+    "chalk": "5.3.0",
+    "consola": "3.4.2",
+    "find-up": "^7.0.0"
+  }
+}

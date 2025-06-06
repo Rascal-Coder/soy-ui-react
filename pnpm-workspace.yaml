@@ -1,4 +1,6 @@
 packages:
-  - "docs"
   - "packages/*"
-  - "examples"
+  - "internal/*"
+  - "internal/eslint-config/*"
+  - "scripts/*"
+  - "apps/*"

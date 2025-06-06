@@ -1,4 +1,3 @@
-"*.vue"    eol=lf
 "*.js"     eol=lf
 "*.ts"     eol=lf
 "*.jsx"    eol=lf

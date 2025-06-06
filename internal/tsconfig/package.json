@@ -1,0 +1,11 @@
+{
+  "name": "@soybean-ui/tsconfig",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "files": ["base.json", "library.json", "node.json", "web-app.json", "web.json"],
+  "dependencies": {
+    "vite": "6.1.1"
+  }
+}

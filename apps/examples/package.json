@@ -1,0 +1,31 @@
+{
+  "name": "soy-ui-react-examples",
+  "type": "module",
+  "packageManager": "pnpm@10.4.1",
+  "license": "MIT",
+  "keywords": ["UI", "UnoCSS", "shadcn-ui", "react", "vite"],
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=9.12.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit --skipLibCheck"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-router-dom": "7.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.5",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@vitejs/plugin-react": "^4.5.1",
+    "tsx": "4.19.3",
+    "typescript": "5.7.3",
+    "vite": "6.1.1"
+  }
+}

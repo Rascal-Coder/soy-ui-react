@@ -3,68 +3,58 @@
   "type": "module",
   "packageManager": "pnpm@10.4.1",
   "license": "MIT",
-  "keywords": [
-    "React admin",
-    "react-admin-template",
-    "Vite5",
-    "TypeScript",
-    "Ant Design",
-    "antd-admin",
-    "Redux",
-    "React-Router V6",
-    "UnoCSS"
-  ],
+  "keywords": ["UI", "UnoCSS", "shadcn-ui", "react", "vite"],
   "engines": {
-    "node": ">=18.12.0",
-    "pnpm": ">=8.7.0"
+    "node": ">=20.10.0",
+    "pnpm": ">=9.12.0"
   },
   "scripts": {
-    "build": "vite build",
-    "cleanup": "sa cleanup",
-    "commit": "sa git-commit",
-    "commit:zh": "sa git-commit -l=zh-cn",
+    "build": "turbo-run build",
+    "check:type": "turbo run typecheck",
+    "clean": "node scripts/clean.mjs",
+    "commit": "soy git-commit",
+    "commit:zh": "soy git-commit -l=zh-cn",
+    "dev": "turbo-run dev",
     "lint": "eslint . --fix",
+    "postinstall": "pnpm -r run stub --if-present",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "simple-git-hooks",
-    "preview": "vite preview",
-    "release": "sa release",
-    "typecheck": "tsc --noEmit --skipLibCheck",
-    "update-pkg": "sa update-pkg"
+    "preview": "turbo-run preview",
+    "release": "soy release",
+    "update-pkg": "soy update-pkg"
   },
   "dependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-redux": "9.2.0",
-    "react-router-dom": "7.2.0"
+    "@unocss/reset": "66.0.0",
+    "unbuild": "^3.5.0"
   },
   "devDependencies": {
-    "@soybeanjs/eslint-config": "1.5.3",
+    "@soybean-ui/tsconfig": "workspace:*",
+    "@soybeanjs/cli": "workspace:*",
+    "@soybeanjs/eslint-config": "workspace:*",
     "@types/node": "22.13.5",
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
-    "@typescript-eslint/eslint-plugin": "8.24.1",
-    "@typescript-eslint/parser": "8.24.1",
-    "@unocss/eslint-config": "66.0.0",
-    "@unocss/preset-icons": "66.0.0",
-    "@unocss/preset-uno": "66.0.0",
-    "@unocss/transformer-directives": "66.0.0",
-    "@unocss/transformer-variant-group": "66.0.0",
-    "@unocss/vite": "66.0.0",
+    "@unocss/core": "^66.1.3",
     "boxen": "8.0.1",
-    "consola": "3.4.0",
-    "eslint": "9.21.0",
-    "eslint-plugin-react": "7.37.4",
-    "eslint-plugin-react-hooks": "5.1.0",
-    "eslint-plugin-react-refresh": "0.4.19",
-    "eslint-plugin-sort": "4.0.0",
+    "cac": "6.7.14",
+    "execa": "9.5.2",
     "lint-staged": "15.4.3",
     "simple-git-hooks": "2.11.1",
     "tsx": "4.19.3",
+    "turbo": "^2.5.4",
     "typescript": "5.7.3",
-    "vite": "6.1.1"
+    "unocss": "66.0.0",
+    "unocss-preset-animations": "1.1.1"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "*"
+      }
+    },
+    "neverBuiltDependencies": ["canvas", "node-gyp"]
   },
   "simple-git-hooks": {
-    "commit-msg": "pnpm sa git-commit-verify",
-    "pre-commit": "pnpm typecheck && pnpm lint-staged"
+    "commit-msg": "pnpm soy git-commit-verify",
+    "pre-commit": "pnpm check:type && pnpm lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
